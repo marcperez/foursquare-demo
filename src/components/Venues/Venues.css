@@ -22,9 +22,9 @@
 
 .venue_filters__button:active,
 .venue_filters__button:hover,
-.venue_filters__button.active {
+.venue_filters__button--active {
     color: #fff;
-    background: blue;
+    background: #2980B9;
 }
 
 .venue_filters__distance {

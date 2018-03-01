@@ -44,7 +44,7 @@ class VenueFilters extends React.Component {
     const getVenueFilterButtonClasses = btnValue => {
       return (
         'venue_filters__button ' +
-        (this.state.query === btnValue ? 'active' : '')
+        (this.state.query === btnValue ? 'venue_filters__button--active' : '')
       );
     };
 
