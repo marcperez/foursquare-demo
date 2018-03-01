@@ -65,4 +65,8 @@ class NearbyVenues extends React.Component {
   }
 }
 
+NearbyVenues.propTypes = {
+  render: PropTypes.func
+}
+
 export default NearbyVenues;
