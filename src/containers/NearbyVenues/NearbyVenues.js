@@ -11,11 +11,16 @@ class NearbyVenues extends React.Component {
       position: {
         coords: {}
       },
+      filters: {
+        query: "",
+        radius: 250
+      },
       locationLoading: true,
       locationError: false
     };
 
     this.loadNearbyVenues = debounce(this.loadNearbyVenues, 500);
+    this.updateFilters = this.updateFilters.bind(this);
   }
 
   componentDidMount() {
@@ -31,11 +36,22 @@ class NearbyVenues extends React.Component {
   }
 
   loadNearbyVenues() {
-    const { position } = this.state;
+    const { position, filters } = this.state;
 
     findVenues({
       ll: `${position.coords.latitude},${position.coords.longitude}`,
+      radius: filters.radius,
+      query: filters.query
     }).then(venues => this.setState({ venues }));
+  }
+
+  updateFilters(filters) {
+    this.setState(
+      {
+        filters
+      },
+      () => this.loadNearbyVenues()
+    );
   }
 
   render() {
@@ -45,7 +61,7 @@ class NearbyVenues extends React.Component {
       return <p>We couldn't detect your location. Please, try again later.</p>;
     }
 
-    return this.props.render(this.state);
+    return this.props.render({ ...this.state, updateFilters: this.updateFilters });
   }
 }
 

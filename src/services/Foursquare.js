@@ -6,8 +6,13 @@ const apiConfig = {
   v: '20180225'
 };
 
-export const findVenues = ({ ll }) => {
-  const params = queryString.stringify({ ...apiConfig, ll });
+export const findVenues = ({ ll, radius = 250, query = '' }) => {
+  const params = queryString.stringify({ 
+    ...apiConfig, 
+    ll,
+    radius,
+    query
+  });
 
   return fetch(`https://api.foursquare.com/v2/venues/explore?${params}`)
     .then(response => response.json())

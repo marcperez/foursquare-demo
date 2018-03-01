@@ -7,7 +7,7 @@ const VenueList = ({ venues }) => {
   if (venues.length > 0) {
     return (
       <div>
-        <ul className="venue-list">
+        <ul className="venue_list">
           {venues.map(venue => <VenueItem key={venue.id} venue={venue} />)}
         </ul>
       </div>
