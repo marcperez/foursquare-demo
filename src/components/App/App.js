@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import VenueList from './../Venues/VenueList';
+import NearbyVenues from '../../containers/NearbyVenues/NearbyVenues';
+import VenueList from '../Venues/VenueItem';
 import './App.css';
 
 class App extends Component {
@@ -9,7 +10,7 @@ class App extends Component {
         <header>
           <h1 className="app_title">Best Nearby</h1>
         </header>
-        <VenueList venues={[{id: 123, name: "Test"}]} />
+        <NearbyVenues render={({ venues }) => <VenueList venues={venues} />} />
       </div>
     );
   }
