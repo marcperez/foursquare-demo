@@ -1,7 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
-import debounce from "lodash/debounce";
-import { findVenues } from "../../services/Foursquare";
+import React from 'react';
+import PropTypes from 'prop-types';
+import debounce from 'lodash/debounce';
+import { findVenues } from '../../services/Foursquare';
 
 class NearbyVenues extends React.Component {
   constructor(props) {
@@ -12,7 +12,7 @@ class NearbyVenues extends React.Component {
         coords: {}
       },
       filters: {
-        query: "",
+        query: '',
         radius: 250
       },
       locationLoading: true,
@@ -61,12 +61,15 @@ class NearbyVenues extends React.Component {
       return <p>We couldn't detect your location. Please, try again later.</p>;
     }
 
-    return this.props.render({ ...this.state, updateFilters: this.updateFilters });
+    return this.props.render({
+      ...this.state,
+      updateFilters: this.updateFilters
+    });
   }
 }
 
 NearbyVenues.propTypes = {
   render: PropTypes.func
-}
+};
 
 export default NearbyVenues;

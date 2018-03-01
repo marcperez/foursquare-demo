@@ -7,8 +7,8 @@ const apiConfig = {
 };
 
 export const findVenues = ({ ll, radius = 250, query = '' }) => {
-  const params = queryString.stringify({ 
-    ...apiConfig, 
+  const params = queryString.stringify({
+    ...apiConfig,
     ll,
     radius,
     query
@@ -17,6 +17,8 @@ export const findVenues = ({ ll, radius = 250, query = '' }) => {
   return fetch(`https://api.foursquare.com/v2/venues/explore?${params}`)
     .then(response => response.json())
     .then(json => json.response.groups)
-    .then(groups => groups.reduce((items, group) => items.concat(group.items), []))
+    .then(groups =>
+      groups.reduce((items, group) => items.concat(group.items), [])
+    )
     .then(items => items.map(item => item.venue));
 };

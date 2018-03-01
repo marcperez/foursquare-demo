@@ -1,6 +1,6 @@
-import React from "react";
-import PropTypes from "prop-types";
-import VenueItem from "./VenueItem";
+import React from 'react';
+import PropTypes from 'prop-types';
+import VenueItem from './VenueItem';
 import './Venues.css';
 
 const VenueList = ({ venues }) => {

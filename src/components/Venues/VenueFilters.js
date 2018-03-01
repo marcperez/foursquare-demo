@@ -42,7 +42,10 @@ class VenueFilters extends React.Component {
 
   render() {
     const getVenueFilterButtonClasses = btnValue => {
-      return 'venue_filters__button ' + (this.state.query === btnValue ? 'active' : '');
+      return (
+        'venue_filters__button ' +
+        (this.state.query === btnValue ? 'active' : '')
+      );
     };
 
     return (
@@ -79,7 +82,9 @@ class VenueFilters extends React.Component {
         </div>
         <div className="venue_filters__distance">
           <div className="venue_filters__distance_label">Distance</div>
-          <div className="venue_filters__distance_current">{this.state.radius}m</div>
+          <div className="venue_filters__distance_current">
+            {this.state.radius}m
+          </div>
           <input
             type="range"
             min="100"

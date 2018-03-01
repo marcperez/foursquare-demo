@@ -13,10 +13,14 @@
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
+    "format": "prettier --print-width 80  --single-quote --write '{src,__{tests,mocks}__}/**/*.js'",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "homepage": "https://marcperez.github.io/foursquare-demo"
+  "homepage": "https://marcperez.github.io/foursquare-demo",
+  "devDependencies": {
+    "prettier": "1.11.1"
+  }
 }

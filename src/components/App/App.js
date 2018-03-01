@@ -11,12 +11,14 @@ class App extends Component {
         <header>
           <h1 className="app_title">Best Nearby</h1>
         </header>
-        <NearbyVenues render={({ venues, filters, updateFilters }) => (
-          <div>
-            <VenueFilters filters={filters} onChange={updateFilters} />
-            <VenueList venues={venues} />
-          </div>
-        )} />
+        <NearbyVenues
+          render={({ venues, filters, updateFilters }) => (
+            <div>
+              <VenueFilters filters={filters} onChange={updateFilters} />
+              <VenueList venues={venues} />
+            </div>
+          )}
+        />
       </div>
     );
   }
