@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import NearbyVenues from '../../containers/NearbyVenues/NearbyVenues';
-import VenueList from '../Venues/VenueItem';
+import VenueList from '../Venues/VenueList';
 import './App.css';
 
 class App extends Component {
